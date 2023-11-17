@@ -16,7 +16,7 @@ This repository contains an Express.js application that showcases [brief descrip
 1. **Clone Repository:** Clone this repository to your local machine using:
 
     ```bash
-    git clone https://github.com/your-username/your-repo.git
+    git clone https://github.com/minghunt/Go-intern-be.git
     ```
 
 2. **Install Dependencies:** Navigate to the project directory and install dependencies:
