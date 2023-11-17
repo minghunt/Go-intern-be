@@ -10,7 +10,9 @@ const getAllProducts = async () => {
 };
 const getProductById = async (productId) => {
     try {
-        const products = await Product.findById(productId);
+        const products = await Product.findOne({
+            id: { $eq: productId },
+        });
         return products;
     } catch (error) {
         throw error;
@@ -27,7 +29,9 @@ const createProduct = async (productData) => {
 };
 const updateProduct = async (productId, productData) => {
     try {
-        const updatedProduct = await Product.findByIdAndUpdate(productId, productData, { new: true });
+        const updatedProduct = await Product.updateOne(
+            { id: productId} ,
+            productData);
         return updatedProduct;
     } catch (error) {
         throw error;
@@ -35,7 +39,7 @@ const updateProduct = async (productId, productData) => {
 };
 const deleteProduct = async (productId) => {
     try {
-        await Product.findByIdAndDelete(productId);
+        await Product.deleteOne({ id: productId});
     } catch (error) {
         throw error;
     }
